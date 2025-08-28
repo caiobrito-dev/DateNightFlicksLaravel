@@ -9,7 +9,7 @@ class SorteioController extends Controller
 {
     public function sortearTodos()
     {
-        $filmeSorteado = Filme::inRandomOrder()->first(); 
+        $filmeSorteado = Filme::all()->random(); 
         
         if(!$filmeSorteado)
         {

@@ -12,6 +12,14 @@ class Filme extends Model
 
     protected $table = 'filmes'; 
 
+    protected $fillable = [
+        'titulo',
+        'sinopse',
+        'ano_lancamento',
+        'duracao',
+        'url_poster'
+    ]; 
+
     public function generos()
     {
         return $this->belongsToMany(Genero::class, 'filme_genero', 'filme_id', 'genero_id'); 

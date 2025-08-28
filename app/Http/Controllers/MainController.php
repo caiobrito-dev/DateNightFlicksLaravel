@@ -8,6 +8,6 @@ class MainController extends Controller
 {
     public function show()
     {
-        return view('main'); 
+        return view('welcome'); 
     }
 }
