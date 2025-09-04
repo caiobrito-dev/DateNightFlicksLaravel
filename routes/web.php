@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AdminFilmesController;
+use App\Http\Controllers\AdminGenerosCategoriasController;
 use App\Http\Controllers\SorteioController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,8 +21,14 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
+    // Rota para adicionar filmes
     Route::get('/admin/filmes/create', [AdminFilmesController::class, 'create'])->name('admin.filmes.create');
     Route::post('/admin/filmes/store', [AdminFilmesController::class, 'store'])->name('admin.filmes.store');
+    
+    // Rota para adicionar generos e categorias
+    Route::get('/admin/gerenciar-dados', [AdminGenerosCategoriasController::class, 'create'])->name('admin.gerenciar-dados.create');
+    Route::post('/admin/generos/store', [AdminGenerosCategoriasController::class, 'storeGenero'])->name('admin.genero.store');
+    Route::post('/admin/categorias/store', [AdminGenerosCategoriasController::class, 'storeCategoria'])->name('admin.categoria.store');
 });
 
 require __DIR__.'/auth.php';

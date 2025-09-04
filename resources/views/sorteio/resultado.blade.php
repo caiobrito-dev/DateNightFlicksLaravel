@@ -11,6 +11,26 @@
             font-family: 'Inter', sans-serif;
             background-color: #1a1a1a;
             color: #f5f5f5;
+            overflow-x: hidden;
+        }
+        .confetti{
+            position: absolute; 
+            width: 10px;
+            height: 10px; 
+            background-color: #dc2626; 
+            opacity: 0;
+            animation: confetti-fall 3s ease-out forwards;
+        }
+
+        @keyframes confetti-fall {
+            from{
+                transform: translateY(0) rotateZ(0); 
+                opacity: 1; 
+            }
+            to{
+                transform: translateY(100vh) rotateZ(720deg);
+                opacity: 0;
+            }
         }
     </style>
 </head>
@@ -59,6 +79,24 @@
             </div>
         @endif
     </div>
-    
+
+    <script>
+        function createConfetti(){
+            const confettiCount = 50; 
+            for(let i = 0; i < confettiCount; i++){
+                const confetti = document.createElement("div"); 
+                confetti.classList.add("confetti"); 
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = Math.random() * -100 + 'vh';
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                document.body.appendChild(confetti);
+            }
+        }
+
+        window.onload = function(){
+            createConfetti(); 
+        }; 
+    </script>
 </body>
 </html>
