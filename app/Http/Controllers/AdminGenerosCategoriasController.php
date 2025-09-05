@@ -8,6 +8,14 @@ use App\Models\Genero;
 
 class AdminGenerosCategoriasController extends Controller
 {
+    public function index()
+    {
+        $generos = Genero::all(); 
+        $categorias = Categoria::all(); 
+
+        // return view("admin.generos_categorias", compact("generos", "categorias")); 
+    }
+
     public function create()
     {
         return view("admin.generos_categorias"); 

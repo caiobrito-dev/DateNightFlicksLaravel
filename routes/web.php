@@ -21,6 +21,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
+
+    Route::get('/admin', [AdminFilmesController::class, 'index'])->name('admin.index');
+
     // Rota para adicionar filmes
     Route::get('/admin/filmes/create', [AdminFilmesController::class, 'create'])->name('admin.filmes.create');
     Route::post('/admin/filmes/store', [AdminFilmesController::class, 'store'])->name('admin.filmes.store');

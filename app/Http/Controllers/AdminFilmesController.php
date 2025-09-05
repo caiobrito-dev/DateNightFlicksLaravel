@@ -9,6 +9,15 @@ use App\Models\Categoria;
 
 class AdminFilmesController extends Controller
 {
+    public function index()
+    {
+        $filmes = Filme::all(); 
+        $generos = Genero::all(); 
+        $categorias = Categoria::all(); 
+        
+        return view("admin.index", compact("filmes", "generos", "categorias")); 
+    }
+
     public function create() 
     {
         $generos = Genero::all(); 
