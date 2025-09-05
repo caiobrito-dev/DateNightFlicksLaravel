@@ -41,7 +41,7 @@
                     <div class="flex items-end space-x-4">
                         <div class="flex-grow">
                             <label for="genero_nome" class="block text-gray-400 mb-1">Nome do Genero</label>
-                            <input type="text" id="genero_nome" name="nome" class="form-input w-full rounded-md" required>
+                            <input type="text" id="genero_nome" name="nome" class="form-input w-full rounded-md h-10 p-2 outline-none" required>
                         </div>
                         <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition-colors duration-300">
                             Adicionar
@@ -59,7 +59,7 @@
                     <div class="flex items-end space-x-4">
                         <div class="flex-grow">
                             <label for="categoria_nome" class="block text-gray-400 mb-1">Nome da Categoria</label>
-                            <input type="text" id="categoria_nome" name="nome" class="form-input w-full rounded-md" required>
+                            <input type="text" id="categoria_nome" name="nome" class="form-input w-full rounded-md h-10 p-2 outline-none" required>
                         </div>
                         <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition-colors duration-300">
                             Adicionar
